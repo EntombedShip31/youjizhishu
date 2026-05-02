@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·系统设置</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/settings.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 设置页面标题 -->
+        <section class="settings-header container">
+            <div class="header-content">
+                <h1>系统设置</h1>
+                <p>自定义您的个性化体验</p>
+            </div>
+        </section>
+
+        <!-- 设置卡片网格 -->
+        <section class="settings-grid container">
+            <!-- 个人资料设置 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>个人资料</h3>
+                </div>
+                <div class="card-content">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <span>修改头像</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="setting-item">
+                            <span>更改用户名</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="setting-item">
+                            <span>个性签名</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 账号安全 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>账号安全</h3>
+                </div>
+                <div class="card-content">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <span>修改密码</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="setting-item">
+                            <span>手机绑定</span>
+                            <div class="setting-status verified">
+                                <i class="fas fa-check-circle"></i>
+                                已绑定
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>邮箱绑定</span>
+                            <div class="setting-status unverified">
+                                <i class="fas fa-exclamation-circle"></i>
+                                未绑定
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 隐私设置 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>隐私设置</h3>
+                </div>
+                <div class="card-content">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <span>个人主页可见性</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="profileVisibility" checked>
+                                <label for="profileVisibility"></label>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>行程分享设置</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="tripSharing">
+                                <label for="tripSharing"></label>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>位置信息</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="locationSharing" checked>
+                                <label for="locationSharing"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 通知设置 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-bell"></i>
+                    <h3>通知设置</h3>
+                </div>
+                <div class="card-content">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <span>系统通知</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="systemNotifications" checked>
+                                <label for="systemNotifications"></label>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>行程提醒</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="tripReminders" checked>
+                                <label for="tripReminders"></label>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <span>社区互动</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="communityNotifications">
+                                <label for="communityNotifications"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主题外观 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>主题外观</h3>
+                </div>
+                <div class="card-content">
+                    <div class="theme-options">
+                        <div class="theme-option active" data-theme="light">
+                            <div class="theme-preview light"></div>
+                            <span>浅色主题</span>
+                        </div>
+                        <div class="theme-option" data-theme="dark">
+                            <div class="theme-preview dark"></div>
+                            <span>深色主题</span>
+                        </div>
+                        <div class="theme-option" data-theme="auto">
+                            <div class="theme-preview auto"></div>
+                            <span>跟随系统</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关于系统 -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>关于系统</h3>
+                </div>
+                <div class="card-content">
+                    <div class="about-info">
+                        <div class="version-info">
+                            <span class="version">当前版本：1.0</span>
+                            <span class="update-status">已是最新版本</span>
+                        </div>
+                        <div class="about-links">
+                            <a href="#" class="about-link">
+                                <i class="fas fa-book"></i>
+                                使用条款
+                            </a>
+                            <a href="#" class="about-link">
+                                <i class="fas fa-shield-alt"></i>
+                                隐私政策
+                            </a>
+                            <a href="#" class="about-link">
+                                <i class="fas fa-question-circle"></i>
+                                帮助中心
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/settings.js"></script>
+</body>
+</html> 

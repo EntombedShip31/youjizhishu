@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·景点详情</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 添加返回按钮 -->
+        <div class="back-nav container">
+            <button class="back-btn" onclick="window.location.href='/spot'">
+                <i class="fas fa-arrow-left"></i>
+                <span>返回景点推荐</span>
+            </button>
+        </div>
+
+        <!-- 景点基本信息部分 -->
+        <section class="spot-header container">
+            <div class="spot-gallery">
+                <div class="gallery-main">
+                    <img src="../assets/img/3.jpg" alt="故宫博物院">
+                    <div class="gallery-overlay">
+                        <span class="photo-count"><i class="fas fa-camera"></i> 12张图片</span>
+                    </div>
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="gallery-thumb active"><img src="../assets/img/3.jpg" alt="故宫全景"></div>
+             
+                  
+                </div>
+            </div>
+            <div class="spot-info">
+                <div class="spot-title">
+                    <h1>故宫博物院</h1>
+                    <div class="spot-rating">
+                        <span class="rating-score">4.9</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <span class="review-count">(12,580条评价)</span>
+                    </div>
+                </div>
+                <div class="spot-tags">
+                    <span class="tag"><i class="fas fa-landmark"></i> 世界文化遗产</span>
+                    <span class="tag"><i class="fas fa-crown"></i> 5A级景区</span>
+                    <span class="tag"><i class="fas fa-history"></i> 明清古建筑</span>
+                </div>
+                <div class="basic-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <span class="label">开放时间</span>
+                            <span class="value">4月1日-10月31日：8:30-17:00<br>11月1日-次年3月31日：8:30-16:30<br>（16:00停止售票，周一闭馆）</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="info-content">
+                            <span class="label">门票价格</span>
+                            <span class="value">旺季（4月1日-10月31日）：¥60/人<br>淡季（11月1日-次年3月31日）：¥40/人</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <span class="label">景区地址</span>
+                            <span class="value">北京市东城区景山前街4号</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-subway"></i>
+                        <div class="info-content">
+                            <span class="label">交通方式</span>
+                            <span class="value">地铁1号线天安门东站下车步行10分钟<br>公交1、2、52、82、120路故宫站下车</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="startTourBtn">
+                        <i class="fas fa-headphones"></i> 开始语音导览
+                    </button>
+                    <button class="btn btn-secondary" id="addToTripBtn">
+                        <i class="fas fa-plus"></i> 加入行程
+                    </button>
+                    <button class="btn btn-outline" id="collectBtn">
+                        <i class="fas fa-heart"></i> 收藏
+                    </button>
+                    <button class="btn btn-outline share-btn">
+                        <i class="fas fa-share-alt"></i> 分享
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 详细介绍部分 -->
+        <section class="spot-detail container">
+            <div class="detail-tabs">
+                <button class="tab-btn active" data-tab="intro">
+                    <i class="fas fa-info-circle"></i> 景点介绍
+                </button>
+                <button class="tab-btn" data-tab="history">
+                    <i class="fas fa-book"></i> 历史文化
+                </button>
+                <button class="tab-btn" data-tab="tips">
+                    <i class="fas fa-lightbulb"></i> 游览贴士
+                </button>
+                <button class="tab-btn" data-tab="facilities">
+                    <i class="fas fa-concierge-bell"></i> 设施服务
+                </button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="introContent">
+                    <div class="rich-content">
+                        <div class="intro-header">
+                            <div class="intro-text">
+                                <h2>故宫博物院</h2>
+                                <p class="subtitle">中国古代宫廷建筑的瑰宝</p>
+                                <p class="description">故宫博物院，旧称紫禁城，是中国明清两代的皇家宫殿，也是现今世界上规模最大、保存最完整的木质结构古建筑群。位于北京中轴线的中心，是中国古代宫廷建筑的代表作。</p>
+                            </div>
+                            <div class="intro-image">
+                                <img src="../assets/img/3.jpg" alt="故宫全景" class="main-image">
+                                <p class="image-caption">故宫鸟瞰图</p>
+                            </div>
+                        </div>
+
+                        <div class="section-block">
+                            <h3><i class="fas fa-landmark"></i> 建筑特色</h3>
+                            <p>故宫南北长961米，东西宽753米，四面围有高10米的城墙，外有宽52米的护城河。紫禁城内的建筑分为外朝和内廷两部分。外朝以太和殿、中和殿、保和殿三大殿为中心，是举行朝会和重大典礼的地方；内廷以乾清宫、交泰殿、坤宁宫后三宫为中心，是皇帝和后妃居住的地方。</p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-star"></i> 必看景点</h4>
+                            <div class="highlight-grid">
+                                <div class="highlight-item">
+                                    <i class="fas fa-crown"></i>
+                                    <h5>太和殿</h5>
+                                    <p>明清两代皇帝举行大典的地方</p>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-home"></i>
+                                    <h5>乾清宫</h5>
+                                    <p>皇帝日常居住和处理政务的地方</p>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-gem"></i>
+                                    <h5>珍宝馆</h5>
+                                    <p>收藏和展示皇家珍品</p>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-tree"></i>
+                                    <h5>御花园</h5>
+                                    <p>皇家园林，四季景色不同</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户评价部分 -->
+        <section class="spot-reviews container">
+            <div class="section-header">
+                <div class="review-stats">
+                    <div class="overall-rating">
+                        <div class="rating-number">4.9</div>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="total-reviews">共 12,580 条评价</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary write-review-btn">
+                    <i class="fas fa-edit"></i> 写评价
+                </button>
+            </div>
+            
+            <div class="review-filters">
+                <button class="filter-btn active">全部</button>
+                <button class="filter-btn">最新</button>
+                <button class="filter-btn">好评</button>
+            </div>
+
+            <div class="review-list">
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <div class="reviewer-meta">
+                            <h4>张三</h4>
+                            <span class="reviewer-badge">资深玩家</span>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-date">2024-03-15</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>景色非常壮观，导览解说很专业，让人深入了解了很多历史文化知识。</p>
+                    </div>
+                    <div class="review-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>128</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-comment"></i>
+                            <span>12</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <div class="reviewer-meta">
+                            <h4>李四</h4>
+                            <span class="reviewer-badge">旅行达人</span>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="review-date">2024-03-14</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>整体体验不错，建议早上去人少一些，下午游客比较多。</p>
+                    </div>
+                    <div class="review-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>56</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-comment"></i>
+                            <span>5</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关推荐部分 -->
+        <section class="related-spots container">
+            <h2>相关推荐</h2>
+            <div class="related-grid">
+                <!-- 相关景点... -->
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/detail.js"></script>
+</body>
+</html> 

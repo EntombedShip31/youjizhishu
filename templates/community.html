@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·互动社区</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/community.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 社区头部 -->
+        <section class="community-header">
+            <div class="header-content container">
+                <div class="header-left">
+                    <h1>游迹社区</h1>
+                    <p>分享旅行故事，发现精彩世界</p>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索感兴趣的内容...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary create-post-btn" id="createPostBtn">
+                        <i class="fas fa-pen"></i> 发布内容
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 内容分类 -->
+        <section class="category-section container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-type="all">
+                    <i class="fas fa-globe"></i> 全部
+                </button>
+                <button class="tab-btn" data-type="strategy">
+                    <i class="fas fa-map-marked-alt"></i> 旅游攻略
+                </button>
+                <button class="tab-btn" data-type="story">
+                    <i class="fas fa-book-open"></i> 旅行故事
+                </button>
+                <button class="tab-btn" data-type="photo">
+                    <i class="fas fa-camera"></i> 美图分享
+                </button>
+                <button class="tab-btn" data-type="question">
+                    <i class="fas fa-question-circle"></i> 问答互助
+                </button>
+            </div>
+            <div class="filter-box">
+                <select id="sortFilter">
+                    <option value="latest">最新发布</option>
+                    <option value="hot">最热门</option>
+                    <option value="recommend">推荐</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- 主要内容区域 -->
+        <section class="main-section container">
+            <!-- 左侧内容列表 -->
+            <div class="content-list">
+                <div class="content-grid" id="contentGrid">
+                    <!-- 内容卡片由 JavaScript 动态生成 -->
+                </div>
+                <div class="load-more">
+                    <button class="btn btn-outline" id="loadMoreBtn">加载更多</button>
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <div class="sidebar">
+                <!-- 热门话题 -->
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-fire"></i> 热门话题</h3>
+                    <div class="topic-list" id="topicList">
+                        <!-- 话题列表由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 活跃用户 -->
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-users"></i> 活跃用户</h3>
+                    <div class="user-list" id="userList">
+                        <!-- 用户列表由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 社区公告 -->
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-bullhorn"></i> 社区公告</h3>
+                    <div class="announcement-list" id="announcementList">
+                        <!-- 公告列表由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/community.js"></script>
+</body>
+</html> 

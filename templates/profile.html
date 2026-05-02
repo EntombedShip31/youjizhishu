@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·个人中心</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 个人信息卡片 -->
+        <section class="profile-header container">
+            <div class="user-info">
+                <div class="avatar-wrapper">
+                    <img src="../assets/img/4.jpg" alt="用户头像" id="userAvatar">
+                </div>
+                <div class="user-details">
+                    <h1>旅行达人</h1>
+                    <p class="user-bio">热爱旅行，记录美好时刻</p>
+                    <div class="user-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">128</span>
+                            <span class="stat-label">收藏景点</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">36</span>
+                            <span class="stat-label">行程数</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">256</span>
+                            <span class="stat-label">获赞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能卡片区域 -->
+        <section class="features-grid container">
+            <!-- 我的收藏 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-heart"></i>
+                    <h3>我的收藏</h3>
+                </div>
+                <div class="card-content">
+                    <div class="collection-grid">
+                        <div class="collection-item">
+                            <img src="../assets/img/3.jpg" alt="故宫">
+                            <span>故宫博物院</span>
+                        </div>
+                        <div class="collection-item">
+                            <img src="../assets/img/1.jpg" alt="西湖">
+                            <span>杭州西湖</span>
+                        </div>
+                        <div class="collection-item">
+                            <img src="../assets/img/2.jpg" alt="长城">
+                            <span>八达岭长城</span>
+                        </div>
+                    </div>
+                    <button class="btn-more">查看全部</button>
+                </div>
+            </div>
+
+            <!-- 我的行程 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-route"></i>
+                    <h3>我的行程</h3>
+                </div>
+                <div class="card-content">
+                    <div class="trip-list">
+                        <div class="trip-item">
+                            <div class="trip-date">4月15日</div>
+                            <div class="trip-info">
+                                <h4>北京文化之旅</h4>
+                                <p>3天2晚 · 4个景点</p>
+                            </div>
+                            <span class="trip-status upcoming">即将出行</span>
+                        </div>
+                        <div class="trip-item">
+                            <div class="trip-date">5月1日</div>
+                            <div class="trip-info">
+                                <h4>杭州休闲游</h4>
+                                <p>2天1晚 · 3个景点</p>
+                            </div>
+                            <span class="trip-status planning">规划中</span>
+                        </div>
+                    </div>
+                    <button class="btn-more">查看全部</button>
+                </div>
+            </div>
+
+            <!-- 我的文章 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>我的文章</h3>
+                </div>
+                <div class="card-content">
+                    <div class="article-list">
+                        <div class="article-item">
+                            <img src="../assets/img/3.jpg" alt="文章配图">
+                            <div class="article-info">
+                                <h4>北京三日游完全攻略</h4>
+                                <p>阅读 1280 · 点赞 328</p>
+                            </div>
+                        </div>
+                        <div class="article-item">
+                            <img src="../assets/img/1.jpg" alt="文章配图">
+                            <div class="article-info">
+                                <h4>西湖最佳拍摄地点推荐</h4>
+                                <p>阅读 960 · 点赞 256</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-more">查看全部</button>
+                </div>
+            </div>
+
+            <!-- 消息中心 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-bell"></i>
+                    <h3>消息中心</h3>
+                    <span class="badge">3</span>
+                </div>
+                <div class="card-content">
+                    <div class="message-list">
+                        <div class="message-item unread">
+                            <i class="fas fa-comment-dots"></i>
+                            <div class="message-info">
+                                <h4>收到新的评论</h4>
+                                <p>张三评论了你的文章《北京三日游》</p>
+                                <span class="message-time">10分钟前</span>
+                            </div>
+                        </div>
+                        <div class="message-item unread">
+                            <i class="fas fa-heart"></i>
+                            <div class="message-info">
+                                <h4>获得新的点赞</h4>
+                                <p>李四点赞了你的行程分享</p>
+                                <span class="message-time">30分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-more">查看全部</button>
+                </div>
+            </div>
+
+            <!-- 个人设置 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-cog"></i>
+                    <h3>个人设置</h3>
+                </div>
+                <div class="card-content">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <i class="fas fa-user"></i>
+                            <span>个人资料</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="setting-item">
+                            <i class="fas fa-lock"></i>
+                            <span>账号安全</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="setting-item">
+                            <i class="fas fa-bell"></i>
+                            <span>消息通知</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 帮助中心 -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>帮助中心</h3>
+                </div>
+                <div class="card-content">
+                    <div class="help-list">
+                        <div class="help-item" data-type="guide">
+                            <i class="fas fa-book"></i>
+                            <span>使用指南</span>
+                        </div>
+                        <div class="help-item" data-type="service">
+                            <i class="fas fa-headset"></i>
+                            <span>联系客服</span>
+                        </div>
+                        <div class="help-item" data-type="feedback">
+                            <i class="fas fa-bug"></i>
+                            <span>问题反馈</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/profile.js"></script>
+</body>
+</html> 

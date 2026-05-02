@@ -1,0 +1,271 @@
+/* 主要内容区域 */
+.main-content {
+    padding: 40px 20px;
+    background: #f5f6f7;
+    min-height: 100vh;
+}
+
+/* 设置页面标题 */
+.settings-header {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+/* 设置卡片网格 */
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* 设置卡片样式 */
+.settings-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.settings-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header i {
+    font-size: 20px;
+    color: #3498db;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* 设置列表样式 */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item:hover {
+    background: #f8f9fa;
+}
+
+.setting-item span {
+    flex: 1;
+    color: #2c3e50;
+}
+
+.setting-item i {
+    color: #666;
+    font-size: 16px;
+}
+
+/* 状态标签样式 */
+.setting-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.setting-status.verified {
+    background: #e1f0ff;
+    color: #3498db;
+}
+
+.setting-status.unverified {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+/* 开关按钮样式 */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toggle-switch label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.toggle-switch input:checked + label {
+    background: #3498db;
+}
+
+.toggle-switch input:checked + label::after {
+    left: calc(100% - 24px);
+}
+
+/* 主题选项样式 */
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.theme-option {
+    text-align: center;
+    cursor: pointer;
+}
+
+.theme-preview {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.theme-option:hover .theme-preview {
+    transform: translateY(-5px);
+}
+
+.theme-preview.light {
+    background: #fff;
+    border: 2px solid #eee;
+}
+
+.theme-preview.dark {
+    background: #2c3e50;
+    border: 2px solid #34495e;
+}
+
+.theme-preview.auto {
+    background: linear-gradient(45deg, #fff 50%, #2c3e50 50%);
+    border: 2px solid #eee;
+}
+
+.theme-option.active .theme-preview {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+}
+
+/* 关于系统样式 */
+.version-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.version {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.update-status {
+    color: #27ae60;
+    font-size: 14px;
+}
+
+.about-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.about-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: transform 0.3s;
+}
+
+.about-link:hover {
+    transform: translateY(-5px);
+    background: #eee;
+}
+
+.about-link i {
+    font-size: 24px;
+    color: #3498db;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+} 

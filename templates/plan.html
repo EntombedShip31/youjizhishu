@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·行程规划</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/plan.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- 添加 Leaflet CSS (国内 CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+    <!-- 添加 Leaflet JavaScript (国内 CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+</head>
+<body>
+    <main class="main-content">
+        <div class="plan-container">
+            <!-- 左侧行程面板 -->
+            <div class="plan-panel">
+                <div class="panel-header">
+                    <h2>行程规划</h2>
+                    <div class="plan-actions">
+                        <button class="btn btn-primary" id="savePlanBtn">
+                            <i class="fas fa-save"></i> 保存行程
+                        </button>
+                        <button class="btn btn-outline" id="sharePlanBtn">
+                            <i class="fas fa-share-alt"></i> 分享
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 行程基本信息 -->
+                <div class="plan-info">
+                    <div class="info-item">
+                        <label>目的地</label>
+                        <input type="text" id="destination" placeholder="输入目的地">
+                    </div>
+                    <div class="date-range">
+                        <div class="info-item">
+                            <label>开始日期</label>
+                            <input type="date" id="startDate">
+                        </div>
+                        <div class="info-item">
+                            <label>结束日期</label>
+                            <input type="date" id="endDate">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 景点搜索 -->
+                <div class="search-box">
+                    <input type="text" id="spotSearch" placeholder="搜索想去的景点">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- 行程日程表 -->
+                <div class="schedule-container">
+                    <div class="schedule-days" id="scheduleDays">
+                        <!-- 日程由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧地图区域 -->
+            <div class="map-container">
+                <div id="mapContainer" style="flex: 1; min-height: 0; width: 100%; z-index: 1;"></div>
+                <div class="map-tools">
+                    <button class="tool-btn" id="zoomIn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="tool-btn" id="zoomOut">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="tool-btn" id="locate">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+                <!-- 推荐景点卡片 -->
+                <div class="spot-recommendations">
+                    <h3>周边推荐</h3>
+                    <div class="recommendation-list" id="recommendationList">
+                        <!-- 推荐景点由 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+   
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/plan.js"></script>
+</body>
+</html> 

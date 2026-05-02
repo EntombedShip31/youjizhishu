@@ -1,0 +1,668 @@
+/* 主要内容区域 */
+.main-content {
+    padding-top: 60px;
+    height: calc(100vh - 60px);
+}
+
+/* 行程规划容器 */
+.plan-container {
+    display: flex;
+    height: 100%;
+}
+
+/* 左侧行程面板 */
+.plan-panel {
+    width: 400px;
+    background: white;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panel-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.panel-header h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.plan-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 行程基本信息 */
+.plan-info {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item label {
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.date-range {
+    display: flex;
+    gap: 15px;
+}
+
+/* 搜索框 */
+.search-box {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: #2980b9;
+}
+
+/* 日程表 */
+.schedule-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.schedule-day {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.day-title {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.spots-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spot-item {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: move;
+}
+
+.spot-time {
+    color: #666;
+    font-size: 14px;
+}
+
+.spot-info {
+    flex: 1;
+}
+
+.spot-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.spot-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.spot-btn {
+    padding: 5px;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.spot-btn:hover {
+    color: #3498db;
+}
+
+/* 右侧地图区域 */
+.map-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    min-height: 0; /* 修复flex布局下高度塌陷 */
+}
+
+#mapContainer {
+    flex: 1;
+    width: 100%;
+    min-height: 500px; /* 强制最小高度，防止地图不显示 */
+    z-index: 1; /* 确保地图不被其他元素覆盖 */
+}
+
+.map-tools {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tool-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.tool-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 推荐景点卡片 */
+.spot-recommendations {
+    height: 300px; /* 固定高度300px */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 0 20px 20px 20px;
+    z-index: 2;
+    flex-shrink: 0; /* 防止被压缩 */
+}
+
+.recommendation-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.recommendation-card {
+    flex: 0 0 250px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.card-info {
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .plan-panel {
+        width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-container {
+        flex-direction: column;
+    }
+    
+    .plan-panel {
+        width: 100%;
+        display: none; /* 手机端自动隐藏侧边栏 */
+    }
+    
+    .plan-panel.show {
+        display: flex;
+        height: 50%;
+    }
+    
+    .map-container {
+        flex: 1;
+        height: 100%; /* 手机端地图占满全屏 */
+    }
+}
+
+/* 添加到行程弹窗样式 */
+.add-schedule-dialog {
+    max-width: 600px;
+    width: 90%;
+}
+
+.spot-preview {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.preview-image {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.preview-info {
+    flex: 1;
+}
+
+.preview-info h4 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.preview-info p {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.schedule-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.time-range {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-range input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.time-separator {
+    color: #666;
+}
+
+.schedule-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* 添加到日程表后的样式 */
+.spot-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.spot-time {
+    font-size: 14px;
+    color: #666;
+    min-width: 120px;
+}
+
+.spot-info {
+    flex: 1;
+}
+
+.spot-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.spot-note {
+    font-size: 14px;
+    color: #666;
+}
+
+.spot-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.spot-btn {
+    padding: 6px;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.spot-btn:hover {
+    color: #3498db;
+}
+
+.spot-btn.delete-btn:hover {
+    color: #e74c3c;
+}
+
+/* 地图弹窗样式 */
+.custom-popup .leaflet-popup-content-wrapper {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 0;
+    padding: 0;
+}
+
+.spot-popup {
+    padding: 15px;
+    min-width: 200px;
+}
+
+.spot-popup h3 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.spot-popup p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.add-to-plan-btn {
+    width: 100%;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.add-to-plan-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.add-to-plan-btn i {
+    font-size: 14px;
+}
+
+/* 自定义弹窗关闭按钮 */
+.custom-popup .leaflet-popup-close-button {
+    padding: 10px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.custom-popup .leaflet-popup-close-button:hover {
+    color: #e74c3c;
+}
+
+/* 弹窗箭头样式 */
+.custom-popup .leaflet-popup-tip {
+    background: white;
+}
+
+/* ===== 行程规划高科技风格动效 ===== */
+
+.plan-panel {
+    border-right: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.panel-header {
+    position: relative;
+}
+
+.panel-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary), var(--accent-color));
+    background-size: 200% 100%;
+    animation: dataFlow 3s ease infinite;
+}
+
+@keyframes dataFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.info-item input {
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-color);
+}
+
+.info-item input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1), 0 0 15px rgba(52, 152, 219, 0.05);
+}
+
+.schedule-day {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.schedule-day:hover {
+    border-color: rgba(52, 152, 219, 0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.spot-item {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 3px solid transparent;
+}
+
+.spot-item:hover {
+    border-left-color: var(--accent-color);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.spot-btn {
+    transition: all 0.3s ease;
+}
+
+.spot-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+.spot-btn.delete-btn:hover {
+    color: #e74c3c;
+    transform: scale(1.15);
+}
+
+.recommendation-card {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.recommendation-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15), 0 0 15px rgba(52, 152, 219, 0.06);
+}
+
+.tool-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tool-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* ==================== 搜索结果样式 ==================== */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin-top: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-item .result-info {
+    flex: 1;
+}
+
+.search-result-item .result-info h4 {
+    margin: 0 0 4px 0;
+    color: #2c3e50;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.search-result-item .result-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.no-results {
+    padding: 30px 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+/* 搜索框容器 */
+.search-box {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+} 

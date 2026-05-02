@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·景点推荐</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/spot.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 搜索和筛选部分 -->
+        <section class="hero-section" id="heroSection">
+            <canvas id="particleCanvas" class="particle-canvas"></canvas>
+            <div class="hero-content container">
+                <h1>发现精彩景点</h1>
+                <p>探索中国各地的自然与人文之美</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索景点、城市、主题...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        <span>搜索</span>
+                    </button>
+                </div>
+                <div class="filter-tags">
+                    <span class="tag active">全部</span>
+                    <span class="tag">文化古迹</span>
+                    <span class="tag">自然风光</span>
+                    <span class="tag">主题公园</span>
+                    <span class="tag">特色小镇</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门目的地 -->
+        <section class="destinations-section container">
+            <div class="section-header">
+                <h2>热门目的地</h2>
+                <div class="filter-box">
+                    <select id="regionFilter">
+                        <option value="">全部地区</option>
+                        <option value="north">华北地区</option>
+                        <option value="south">华南地区</option>
+                        <option value="east">华东地区</option>
+                        <option value="west">西部地区</option>
+                    </select>
+                    <select id="seasonFilter">
+                        <option value="">全部季节</option>
+                        <option value="spring">春季推荐</option>
+                        <option value="summer">夏季推荐</option>
+                        <option value="autumn">秋季推荐</option>
+                        <option value="winter">冬季推荐</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="popular">按人气排序</option>
+                        <option value="rating">按评分排序</option>
+                        <option value="price">按价格排序</option>
+                    </select>
+                </div>
+            </div>
+            <div class="spots-grid" id="spotsGrid">
+                <!-- 景点卡片由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 主题推荐 -->
+        <section class="themes-section">
+            <div class="section-header container">
+                <h2>主题推荐</h2>
+                <p>根据不同主题，为您推荐最适合的景点</p>
+            </div>
+            <div class="theme-cards container">
+                <div class="theme-card" style="background-image: url('../assets/img/3.jpg')">
+                    <div class="theme-content">
+                        <h3>文化古迹</h3>
+                        <p>感受历史文化的魅力</p>
+                    </div>
+                </div>
+                <div class="theme-card" style="background-image: url('../assets/img/黄山.jpg')">
+                    <div class="theme-content">
+                        <h3>自然风光</h3>
+                        <p>领略大自然的壮美</p>
+                    </div>
+                </div>
+                <div class="theme-card" style="background-image: url('../assets/img/sc.jpg')">
+                    <div class="theme-content">
+                        <h3>美食之旅</h3>
+                        <p>品味地方特色美食</p>
+                    </div>
+                </div>
+                <div class="theme-card" style="background-image: url('../assets/img/洱海.jpg')">
+                    <div class="theme-content">
+                        <h3>摄影胜地</h3>
+                        <p>捕捉最美的瞬间</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 季节推荐 -->
+        <section class="seasonal-section container">
+            <div class="section-header">
+                <h2>当季推荐</h2>
+                <p>精选当季最佳旅游目的地</p>
+            </div>
+            <div class="seasonal-slider" id="seasonalSlider">
+                <!-- 季节推荐内容由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 用户体验 -->
+        <section class="reviews-section container">
+            <div class="section-header">
+                <h2>游客体验</h2>
+                <p>来自真实游客的旅行体验</p>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- 用户评价由 JavaScript 动态生成 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 景点详情弹窗 -->
+    <div class="modal" id="spotDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalSpotName"></h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- 景点详情内容由 JavaScript 动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/spot.js"></script>
+</body>
+</html> 

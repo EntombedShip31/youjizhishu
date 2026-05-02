@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游迹智述·首页</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 轮播图部分 -->
+        <section class="hero-section">
+            <div class="carousel-container" id="heroCarousel">
+                <div class="carousel-slides">
+                    <!-- 轮播图内容由 JavaScript 动态生成 -->
+                </div>
+                <div class="carousel-overlay">
+                    <h1>探索世界的每一个角落</h1>
+                    <p>让AI导游带你领略文化与自然的完美融合</p>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索目的地、景点、攻略...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <span>搜索</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-indicators"></div>
+            </div>
+        </section>
+
+        <!-- 特色服务部分 -->
+        <section class="features-section container">
+            <div class="features-grid">
+                <div class="feature-card" id="aiGuideCard">
+                    <i class="fas fa-robot"></i>
+                    <h3>在线智能导览</h3>
+                    <p>专业讲解，深度了解景点文化历史</p>
+                </div>
+                <div class="feature-card" id="personalizedRouteCard">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>个性化路线</h3>
+                    <p>智能规划，打造专属旅行体验</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <h3>AR实景导航</h3>
+                    <p>身临其境，探索景点每个角落</p>
+                </div>
+                <div class="feature-card" id="communityCard">
+                    <i class="fas fa-users"></i>
+                    <h3>社区互动</h3>
+                    <p>分享体验，结识志同道合的伙伴</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门目的地 -->
+        <section class="destinations-section">
+            <div class="section-header container">
+                <h2>热门目的地</h2>
+                <a href="#" class="view-more">查看更多 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="destinations-grid container">
+                <div class="destination-card large">
+                    <img src="../assets/img/4.jpg" alt="北京">
+                    <div class="destination-info">
+                        <h3>北京</h3>
+                        <p>古都文化，现代魅力</p>
+                        <span class="spot-count">238个景点</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../assets/img/5.jpg" alt="上海">
+                    <div class="destination-info">
+                        <h3>上海</h3>
+                        <p>魔都风情</p>
+                    </div>
+                </div>
+                <!-- 更多目的地卡片 -->
+            </div>
+        </section>
+
+        <!-- 精选主题 -->
+        <section class="themes-section container">
+            <div class="section-header">
+                <h2>精选主题</h2>
+                <div class="theme-tabs">
+                    <button class="theme-tab active" data-theme="cultural">文化古迹</button>
+                    <button class="theme-tab" data-theme="nature">自然风光</button>
+                    <button class="theme-tab" data-theme="food">美食之旅</button>
+                    <button class="theme-tab" data-theme="photography">摄影胜地</button>
+                </div>
+            </div>
+            <div class="themes-content" id="themesContent">
+                <!-- 主题内容由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 热门攻略 -->
+        <section class="guides-section">
+            <div class="section-header container">
+                <h2>热门攻略</h2>
+                <a href="#" class="view-more">更多攻略 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="guides-grid container">
+                <!-- 攻略卡片由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 社区精选 -->
+        <section class="community-section container">
+            <div class="section-header">
+                <h2>社区精选</h2>
+                <a href="#" class="view-more">进入社区 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="community-grid">
+                <!-- 社区内容由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 下载APP -->
+        <section class="app-section">
+            <div class="container">
+                <div class="app-content">
+                    <div class="app-info">
+                        <h2>下载游迹智述APP</h2>
+                        <p>随时随地获取智能导游服务，探索世界的每一个角落</p>
+                        <div class="app-features">
+                            <div class="app-feature">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>离线导航</span>
+                            </div>
+                            <div class="app-feature">
+                                <i class="fas fa-robot"></i>
+                                <span>AI导游</span>
+                            </div>
+                            <div class="app-feature">
+                                <i class="fas fa-camera"></i>
+                                <span>AR识别</span>
+                            </div>
+                            <div class="app-feature">
+                                <i class="fas fa-users"></i>
+                                <span>社区互动</span>
+                            </div>
+                        </div>
+                        <div class="app-download">
+                            <div class="qr-code">
+                                <img src="../assets/img/qr-code.png" alt="二维码">
+                            </div>
+                            <div class="download-buttons">
+                                <a href="#" class="download-btn">
+                                    <i class="fab fa-apple"></i>
+                                    <div class="btn-text">
+                                        <span class="btn-label">下载</span>
+                                        <span class="btn-title">App Store</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-btn">
+                                    <i class="fab fa-android"></i>
+                                    <div class="btn-text">
+                                        <span class="btn-label">下载</span>
+                                        <span class="btn-title">Google Play</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-preview">
+                        <img src="../assets/img/app-preview.png" alt="App预览">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/home.js"></script>
+</body>
+</html> 
