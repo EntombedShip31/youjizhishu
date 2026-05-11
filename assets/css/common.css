@@ -11,11 +11,13 @@
     --shadow-color-strong: rgba(0, 0, 0, 0.15);
     --accent-color: #3498db;
     --accent-color-light: #5dade2;
+    --accent-secondary: #2ecc71;
     --success-color: #2ecc71;
     --warning-color: #f39c12;
     --error-color: #e74c3c;
     --card-bg: #ffffff;
     --input-bg: #f8f9fa;
+    --transition: all 0.3s ease;
 }
 
 [data-theme="dark"] {
@@ -28,8 +30,74 @@
     --border-color: #3a3a3a;
     --shadow-color: rgba(0, 0, 0, 0.3);
     --shadow-color-strong: rgba(0, 0, 0, 0.4);
+    --accent-color: #5dade2;
+    --accent-color-light: #85c1e9;
+    --accent-secondary: #58d68d;
     --card-bg: #1e1e1e;
     --input-bg: #2a2a2a;
+}
+
+/* 深色模式导航栏样式优化 */
+[data-theme="dark"] .navbar {
+    background: rgba(30, 30, 30, 0.95);
+    border-bottom: 1px solid rgba(93, 173, 226, 0.2);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    background: rgba(93, 173, 226, 0.15);
+}
+
+[data-theme="dark"] .nav-link.active {
+    background: rgba(93, 173, 226, 0.2);
+}
+
+/* 深色模式搜索框 */
+[data-theme="dark"] .nav-search input {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .nav-search input:focus {
+    border-color: #5dade2;
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.15);
+}
+
+/* 深色模式用户菜单 */
+[data-theme="dark"] .user-menu {
+    background: #1e1e1e;
+    border: 1px solid #3a3a3a;
+}
+
+[data-theme="dark"] .user-menu-trigger:hover {
+    background: #2d2d2d;
+}
+
+/* 深色模式页脚 */
+[data-theme="dark"] .footer {
+    background: #1a1a1a;
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer-links a {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* 深色模式滚动条 */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5dade2, #85c1e9);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #85c1e9, #5dade2);
 }
 
 /* 重置默认样式 */
@@ -821,6 +889,48 @@ textarea,
 
 .menu-divider {
     background: var(--border-color);
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(52, 152, 219, 0.15);
+    color: var(--accent-color);
+    transform: rotate(15deg) scale(1.1);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+/* 深色模式主题切换按钮特殊样式 */
+[data-theme="dark"] .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* 卡片样式 */

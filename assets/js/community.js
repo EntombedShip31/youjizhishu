@@ -519,16 +519,18 @@ function getTypeText(type) {
 
 // 显示帖子详情
 function showPostDetail(postId) {
-    // 跳转到帖子详情页
-    window.location.href = `post-detail.html?id=${postId}`;
+    // 跳转到帖子详情页（使用已有的detail路由）
+    window.location.href = `detail.html?id=${postId}`;
 }
 
 // 显示用户主页
 function showUserProfile(userId) {
+    // 跳转到个人中心页（使用已有的profile路由）
     window.location.href = `profile.html?id=${userId}`;
 }
 
 // 显示话题详情
 function showTopic(topicId) {
-    window.location.href = `topic.html?id=${topicId}`;
+    // 暂时停留在当前页面，或者也可以跳转到社区页面
+    alert(`话题详情功能开发中...（话题ID: ${topicId}）`);
 } 

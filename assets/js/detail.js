@@ -162,7 +162,7 @@ function showErrorPage() {
             <i class="fas fa-exclamation-circle"></i>
             <h2>抱歉，未找到该景点信息</h2>
             <p>该景点可能不存在或已被删除</p>
-            <button class="btn btn-primary" onclick="window.location.href='/spot'">
+            <button class="btn btn-primary" onclick="window.location.href='spot.html'">
                 返回景点列表
             </button>
         </div>
@@ -922,7 +922,7 @@ function loadRelatedSpots(spotId) {
 
 // 显示景点详情
 function showDestinationDetail(spotId) {
-    window.location.href = `/detail?id=${spotId}`;
+    window.location.href = `detail.html?id=${spotId}`;
 }
 
 // 加载景点介绍内容

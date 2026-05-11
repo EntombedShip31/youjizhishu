@@ -36,21 +36,21 @@ class Navigation {
         nav.innerHTML = `
             <div class="nav-container container">
                 <div class="nav-left">
-                    <a href="/home" class="nav-logo">
+                    <a href="home.html" class="nav-logo">
                         <img src="assets/img/logo.png" alt="游迹智述" class="nav-logo-img">
                         <span class="nav-logo-text">游迹智述</span>
                     </a>
                     <div class="nav-links">
-                        <a href="/home" class="nav-link" data-page="home">
+                        <a href="home.html" class="nav-link" data-page="home">
                             <i class="fas fa-home"></i>首页
                         </a>
-                        <a href="/spot" class="nav-link" data-page="spot">
+                        <a href="spot.html" class="nav-link" data-page="spot">
                             <i class="fas fa-map-marked-alt"></i>景点推荐
                         </a>
-                        <a href="/plan" class="nav-link" data-page="plan">
+                        <a href="plan.html" class="nav-link" data-page="plan">
                             <i class="fas fa-route"></i>行程规划
                         </a>
-                        <a href="/community" class="nav-link" data-page="community">
+                        <a href="community.html" class="nav-link" data-page="community">
                             <i class="fas fa-users"></i>互动社区
                         </a>
                     </div>
@@ -59,6 +59,11 @@ class Navigation {
                     <div class="nav-search">
                         <input type="text" placeholder="搜索景点、攻略...">
                         <button id="navSearchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="theme-toggle">
+                        <button id="themeToggleBtn" class="theme-toggle-btn">
+                            <i class="fas fa-sun"></i>
+                        </button>
                     </div>
                     <div class="nav-ai-assistant">
                         <button id="aiAssistantBtn" class="ai-assistant-btn">
@@ -72,7 +77,7 @@ class Navigation {
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="user-menu">
-                            <a href="/profile" class="menu-item">
+                            <a href="profile.html" class="menu-item">
                                 <i class="fas fa-user"></i>个人中心
                             </a>
                             <a href="#" class="menu-item">
@@ -82,7 +87,7 @@ class Navigation {
                                 <i class="fas fa-bell"></i>消息通知
                                 <span class="badge">3</span>
                             </a>
-                            <a href="/settings" class="menu-item">
+                            <a href="settings.html" class="menu-item">
                                 <i class="fas fa-cog"></i>系统设置
                             </a>
                             <div class="menu-divider"></div>
@@ -128,7 +133,7 @@ class Navigation {
             const input = document.querySelector('.nav-search input');
             const keyword = input?.value.trim();
             if (keyword) {
-                window.location.href = `/spot?search=${encodeURIComponent(keyword)}`;
+                window.location.href = `spot.html?search=${encodeURIComponent(keyword)}`;
             }
         });
 
@@ -137,6 +142,13 @@ class Navigation {
             if (e.key === 'Enter') {
                 document.getElementById('navSearchBtn')?.click();
             }
+        });
+
+        // 主题切换按钮
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        this.initThemeButton(themeToggleBtn);
+        themeToggleBtn?.addEventListener('click', () => {
+            this.toggleTheme();
         });
 
         // AI助手入口点击事件
@@ -148,6 +160,32 @@ class Navigation {
 
         // 更新用户信息
         this.updateUserInfo();
+    }
+
+    initThemeButton(btn) {
+        if (!btn) return;
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        this.updateThemeIcon(btn, currentTheme);
+    }
+
+    toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        const btn = document.getElementById('themeToggleBtn');
+        this.updateThemeIcon(btn, newTheme);
+    }
+
+    updateThemeIcon(btn, theme) {
+        if (!btn) return;
+        const icon = btn.querySelector('i');
+        if (icon) {
+            icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        }
     }
 
     openAIAssistant() {
@@ -1139,7 +1177,8 @@ class Navigation {
 
     setActivePage() {
         const path = window.location.pathname;
-        const currentPage = path === '/' ? 'home' : path.split('/').pop();
+        const fileName = path.split('/').pop().replace('.html', '');
+        const currentPage = fileName === 'index' || fileName === '' ? 'home' : fileName;
         const links = document.querySelectorAll('.nav-link');
         
         links.forEach(link => {
@@ -1171,7 +1210,7 @@ class Navigation {
             nav?.classList.add('fade-out');
             
             setTimeout(() => {
-                window.location.href = '/';
+                window.location.href = 'index.html';
             }, 500);
         }
     }
@@ -1180,10 +1219,11 @@ class Navigation {
 // 用户认证检查
 function checkAuth() {
     const token = localStorage.getItem('token');
-    const currentPage = window.location.pathname.split('/').pop();
+    const fileName = window.location.pathname.split('/').pop();
+    const currentPage = fileName.replace('.html', '');
     
-    if (!token && currentPage !== '') {
-        window.location.href = '/';
+    if (!token && currentPage !== 'index' && currentPage !== '') {
+        window.location.href = 'index.html';
     }
 }
 

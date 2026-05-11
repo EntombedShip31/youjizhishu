@@ -151,18 +151,21 @@ function loadThemeContent(theme) {
     const themeData = {
         cultural: [
             {
+                id: 1,
                 image: 'assets/img/3.jpg',
                 title: '故宫博物院',
                 description: '中国明清两代的皇家宫殿',
                 tags: ['文化遗产', '古建筑', '博物馆']
             },
             {
+                id: 2,
                 image: 'assets/img/xian.jpg',
                 title: '西安古城',
                 description: '千年古都，文化荟萃',
                 tags: ['历史古迹', '美食', '文化']
             },
             {
+                id: 3,
                 image: 'assets/img/苏州.jpg',
                 title: '苏州园林',
                 description: '江南园林，诗意栖居',
@@ -171,6 +174,7 @@ function loadThemeContent(theme) {
         ],
         nature: [
             {
+                id: 4,
                 image: 'assets/img/黄山.jpg',
                 title: '黄山风景',
                 description: '奇松怪石、云海日出',
@@ -179,6 +183,7 @@ function loadThemeContent(theme) {
         ],
         food: [
             {
+                id: 5,
                 image: 'assets/img/sc.jpg',
                 title: '成都美食',
                 description: '天府之国，美食天堂',
@@ -187,6 +192,7 @@ function loadThemeContent(theme) {
         ],
         photography: [
             {
+                id: 6,
                 image: 'assets/img/洱海.jpg',
                 title: '洱海日落',
                 description: '古城夕照，湖光山色',
@@ -197,7 +203,7 @@ function loadThemeContent(theme) {
     
     const data = themeData[theme] || [];
     container.innerHTML = data.map(item => `
-        <div class="theme-card">
+        <div class="theme-card" data-theme-id="${item.id}">
             <div class="theme-image-wrapper">
                 <img src="${item.image}" alt="${item.title}" class="theme-image">
             </div>
@@ -210,6 +216,14 @@ function loadThemeContent(theme) {
             </div>
         </div>
     `).join('');
+    
+    // 添加点击事件
+    container.querySelectorAll('.theme-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const themeId = card.dataset.themeId;
+            window.location.href = `spot.html?id=${themeId}`;
+        });
+    });
 }
 
 // 加载热门目的地
@@ -222,6 +236,7 @@ function loadGuides() {
     const container = document.querySelector('.guides-grid');
     const guidesData = [
         {
+            id: 1,
             title: '北京三日游完全攻略',
             author: '旅行达人',
             avatar: 'assets/img/4.jpg',
@@ -229,6 +244,7 @@ function loadGuides() {
             likes: 120
         },
         {
+            id: 2,
             title: '杭州西湖一日游',
             author: '摄影师小王',
             avatar: 'assets/img/1.jpg',
@@ -236,6 +252,7 @@ function loadGuides() {
             likes: 98
         },
         {
+            id: 3,
             title: '成都美食探店指南',
             author: '美食家老李',
             avatar: 'assets/img/sc.jpg',
@@ -245,7 +262,7 @@ function loadGuides() {
     ];
     
     container.innerHTML = guidesData.map(guide => `
-        <div class="guide-card">
+        <div class="guide-card" data-guide-id="${guide.id}">
             <div class="guide-content">
                 <h3>${guide.title}</h3>
                 <div class="guide-author">
@@ -261,6 +278,14 @@ function loadGuides() {
             </div>
         </div>
     `).join('');
+    
+    // 添加点击事件
+    container.querySelectorAll('.guide-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const guideId = card.dataset.guideId;
+            window.location.href = `detail.html?id=${guideId}`;
+        });
+    });
 }
 
 // 加载社区精选
@@ -268,6 +293,7 @@ function loadCommunityPosts() {
     const container = document.querySelector('.community-grid');
     const postsData = [
         {
+            id: 1,
             title: '记录我的西藏之旅',
             excerpt: '走进西藏，感受雪域高原的神秘魅力...',
             author: '高原行者',
@@ -275,6 +301,7 @@ function loadCommunityPosts() {
             image: 'assets/img/6.jpg'
         },
         {
+            id: 2,
             title: '云南小众景点探秘',
             excerpt: '远离人群，探索云南的秘境之美...',
             author: '背包客小张',
@@ -282,6 +309,7 @@ function loadCommunityPosts() {
             image: 'assets/img/洱海.jpg'
         },
         {
+            id: 3,
             title: '江南水乡摄影指南',
             excerpt: '带你发现江南水乡的最佳拍摄地...',
             author: '摄影师阿文',
@@ -291,7 +319,7 @@ function loadCommunityPosts() {
     ];
     
     container.innerHTML = postsData.map(post => `
-        <div class="community-card">
+        <div class="community-card" data-post-id="${post.id}">
             <div class="post-image-wrapper">
                 <img src="${post.image}" alt="${post.title}" class="post-image">
             </div>
@@ -307,13 +335,21 @@ function loadCommunityPosts() {
             </div>
         </div>
     `).join('');
+    
+    // 添加点击事件
+    container.querySelectorAll('.community-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const postId = card.dataset.postId;
+            window.location.href = `community.html`;
+        });
+    });
 }
 
 // 搜索功能
 document.querySelector('.search-btn').addEventListener('click', () => {
     const keyword = document.querySelector('.search-box input').value.trim();
     if (keyword) {
-        window.location.href = `/spot?search=${encodeURIComponent(keyword)}`;
+        window.location.href = `spot.html?search=${encodeURIComponent(keyword)}`;
     }
 });
 
@@ -840,7 +876,7 @@ function initCardEvents() {
     const personalizedRouteCard = document.getElementById('personalizedRouteCard');
     if (personalizedRouteCard) {
         personalizedRouteCard.addEventListener('click', function() {
-            window.location.href = '/plan';
+            window.location.href = 'plan.html';
         });
         
         // 添加悬停效果
@@ -851,7 +887,7 @@ function initCardEvents() {
     const communityCard = document.getElementById('communityCard');
     if (communityCard) {
         communityCard.addEventListener('click', function() {
-            window.location.href = '/community';
+            window.location.href = 'community.html';
         });
         
         // 添加悬停效果

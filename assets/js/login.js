@@ -130,7 +130,7 @@ async function handleLogin(e) {
         
         // 延迟跳转
         setTimeout(() => {
-            window.location.href = '/home';
+            window.location.href = 'home.html';
         }, 500);
         
     } catch (error) {

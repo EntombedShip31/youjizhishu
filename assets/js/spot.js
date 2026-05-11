@@ -370,7 +370,7 @@ function getCurrentSeason() {
 
 // 显示景点详情
 function showDestinationDetail(spotId) {
-    window.location.href = `/detail?id=${spotId}`;
+    window.location.href = `detail.html?id=${spotId}`;
 }
 
 // 添加新建景点按钮的初始化和处理函数
