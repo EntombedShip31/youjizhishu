@@ -669,12 +669,9 @@ function initAIChat() {
     }
     
     function fetchAIResponseStream(message, onUpdate) {
-        // 调用deepseek API
-        const apiKey = 'sk-029d6af079b344b7a010ab125fe333d4';
-        const url = 'https://api.deepseek.com/v1/chat/completions';
+        const url = '/api/chat';
         
         const requestBody = {
-            model: 'deepseek-chat',
             messages: [
                 {
                     role: 'system',
@@ -691,8 +688,7 @@ function initAIChat() {
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestBody)
         })

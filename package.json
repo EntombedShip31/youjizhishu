@@ -1,0 +1,18 @@
+{
+  "name": "youjizhishu",
+  "version": "1.0.0",
+  "description": "游迹智述 - 旅行AI助手",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
