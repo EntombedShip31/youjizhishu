@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: youjizhishu
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+    autoDeploy: true
